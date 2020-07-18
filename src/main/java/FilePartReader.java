@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class FilePartReader {
 
     private String filePath;
@@ -37,5 +41,9 @@ public class FilePartReader {
     public void setup(String filePath, int fromLine, int toLine) {
         if (toLine < fromLine) throw new IllegalArgumentException("toLine can't be less than fromLine");
         if (fromLine < 1) throw new IllegalArgumentException("fromLine can't be less than 1");
+    }
+
+    private String read() throws FileNotFoundException {
+        return new Scanner(new File(filePath)).useDelimiter("\\Z").next();
     }
 }
