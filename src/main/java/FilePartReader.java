@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FilePartReader {
@@ -43,7 +44,15 @@ public class FilePartReader {
         if (fromLine < 1) throw new IllegalArgumentException("fromLine can't be less than 1");
     }
 
-    private String read() throws FileNotFoundException {
+    public String read() throws FileNotFoundException {
         return new Scanner(new File(filePath)).useDelimiter("\\Z").next();
     }
+
+    public String readLines() throws FileNotFoundException {
+        String[] lines = read().split("\\r?\\n");
+        if (toLine > lines.length) throw new IllegalArgumentException("toLine is past end of file");
+        String[] resultLines = Arrays.copyOfRange(lines, fromLine - 1, toLine);
+        return String.join("\n",resultLines);
+    }
+
 }
