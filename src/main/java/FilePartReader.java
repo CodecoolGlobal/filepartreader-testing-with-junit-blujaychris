@@ -40,8 +40,14 @@ public class FilePartReader {
     }
 
     public void setup(String filePath, int fromLine, int toLine) {
-        if (toLine < fromLine) throw new IllegalArgumentException("toLine can't be less than fromLine");
-        if (fromLine < 1) throw new IllegalArgumentException("fromLine can't be less than 1");
+        if (fromLine < 1) {
+            throw new IllegalArgumentException("fromLine can't be less than 1");
+        } else if (toLine < fromLine) {
+            throw new IllegalArgumentException("toLine can't be less than fromLine");
+        } else {
+            System.out.println("All is fine and dandy");
+        }
+
     }
 
     public String read() throws FileNotFoundException {
@@ -52,7 +58,7 @@ public class FilePartReader {
         String[] lines = read().split("\\r?\\n");
         if (toLine > lines.length) throw new IllegalArgumentException("toLine is past end of file");
         String[] resultLines = Arrays.copyOfRange(lines, fromLine - 1, toLine);
-        return String.join("\n",resultLines);
+        return String.join("\n", resultLines);
     }
 
 }

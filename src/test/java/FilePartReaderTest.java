@@ -28,7 +28,12 @@ class FilePartReaderTest {
         assertEquals(0,filePartReader.getToLine());
     }
 
-
+    @Test
+    public void throwArgumentException() {
+        filePartReader.setFromLine(1);
+        filePartReader.setToLine(2);
+        assertDoesNotThrow(() -> filePartReader.setup(filePartReader.getFilePath(), filePartReader.getFromLine(), filePartReader.getToLine()));
+    }
 
     @AfterEach
     void tearDown() {
