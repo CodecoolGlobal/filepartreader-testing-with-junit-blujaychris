@@ -1,7 +1,6 @@
-1a1
-2b 2a
-3c 3b 3a
-4d 4cr 4bb4 4a
-5e 5d 5c 5b 5ax
-6f 6ea 6d 6ca 6bb 6a
-7g 7f 7ea
+1a 1b
+2a 2b 2c
+3a 3b 3c 3d
+4a 4b 4c 4d 4e
+5a 5b 5c 5d 5e 5f
+6a 6b 6c 6d 6e 6f 6g
