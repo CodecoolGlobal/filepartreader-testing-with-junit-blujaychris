@@ -1,5 +1,4 @@
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,10 +31,12 @@ public class FileWordAnalyzer {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-
-
-    public List getStringsWithPalindromes() {
-        filePartReader.readLines();
+    public List getStringsWithPalindromes() throws FileNotFoundException {
+        String[] words = filePartReader.readLines().split("\\W+");
+        List<String> wordsList = new ArrayList<>(Arrays.asList(words));
+        return wordsList.stream()
+                .filter(x -> x.toUpperCase().equals(new StringBuilder(x.toUpperCase()).reverse().toString()))
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
 }

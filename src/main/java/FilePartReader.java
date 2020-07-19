@@ -9,10 +9,10 @@ public class FilePartReader {
     private int fromLine;
     private int toLine;
 
-    public FilePartReader(String filePath, int fromLine, int toLine) {
-        this.filePath = filePath;
-        this.fromLine = fromLine;
-        this.toLine = toLine;
+    public FilePartReader() {
+        this.filePath = "";
+        this.fromLine = 0;
+        this.toLine = 0;
     }
 
     public String getFilePath() {
