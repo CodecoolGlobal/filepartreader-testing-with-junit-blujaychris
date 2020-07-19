@@ -16,7 +16,7 @@ public class FileWordAnalyzer {
         return filePartReader;
     }
 
-    public List getWordsOrderedAlphabetically() throws FileNotFoundException {
+    public ArrayList getWordsOrderedAlphabetically() throws FileNotFoundException {
         String[] words = filePartReader.readLines().split("\\W+");
         ArrayList<String> wordsList = new ArrayList<>(Arrays.asList(words));
         wordsList.sort(String::compareTo);
