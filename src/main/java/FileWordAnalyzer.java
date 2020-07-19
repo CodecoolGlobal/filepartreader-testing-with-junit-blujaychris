@@ -23,7 +23,7 @@ public class FileWordAnalyzer {
         return wordsList;
     }
 
-    public List getWordsContainingSubstring(String subString) throws FileNotFoundException {
+    public ArrayList getWordsContainingSubstring(String subString) throws FileNotFoundException {
         String[] words = filePartReader.readLines().split("\\W+");
         List<String> wordsList = new ArrayList<>(Arrays.asList(words));
         return wordsList.stream()
@@ -31,7 +31,7 @@ public class FileWordAnalyzer {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public List getStringsWithPalindromes() throws FileNotFoundException {
+    public ArrayList getStringsWithPalindromes() throws FileNotFoundException {
         String[] words = filePartReader.readLines().split("\\W+");
         List<String> wordsList = new ArrayList<>(Arrays.asList(words));
         return wordsList.stream()

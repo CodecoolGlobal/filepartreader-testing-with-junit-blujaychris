@@ -76,7 +76,7 @@ class FilePartReaderTest {
         filePartReader.setFilePath("test_data.txt");
         String result = filePartReader.readLines();
         assertEquals("1a 1b\n2a 2b 2c\n3a 3b 3c 3d\n4a 4b 4c 4d 4e\n" +
-                "5a 5b 5c 5d 5e 5f\n6a 6b 6c 6d 6e 6f 6g", result);
+                "5a 5b 5c 5d 5e 5f\n6a 6b 6c 6d 6e 6f 6g6", result);
     }
 
     @Test
