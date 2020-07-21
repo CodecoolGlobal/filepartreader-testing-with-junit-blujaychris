@@ -15,9 +15,7 @@ class FileWordAnalyzerTest {
     @BeforeEach
     void setUp() {
         fileWordAnalyzer = new FileWordAnalyzer(new FilePartReader());
-        fileWordAnalyzer.getFilePartReader().setFilePath("test_data.txt");
-        fileWordAnalyzer.getFilePartReader().setFromLine(1);
-        fileWordAnalyzer.getFilePartReader().setToLine(6);
+        fileWordAnalyzer.getFilePartReader().setup("test_data.txt",1,6);
     }
 
     @Test

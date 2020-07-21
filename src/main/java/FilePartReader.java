@@ -14,32 +14,35 @@ public class FilePartReader {
         this.fromLine = 0;
         this.toLine = 0;
     }
-
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
-    public int getFromLine() {
-        return fromLine;
-    }
-
-    public void setFromLine(int fromLine) {
-        this.fromLine = fromLine;
-    }
-
-    public int getToLine() {
-        return toLine;
-    }
-
-    public void setToLine(int toLine) {
-        this.toLine = toLine;
-    }
+//
+//    public String getFilePath() {
+//        return filePath;
+//    }
+//
+//    public void setFilePath(String filePath) {
+//        this.filePath = filePath;
+//    }
+//
+//    public int getFromLine() {
+//        return fromLine;
+//    }
+//
+//    public void setFromLine(int fromLine) {
+//        this.fromLine = fromLine;
+//    }
+//
+//    public int getToLine() {
+//        return toLine;
+//    }
+//
+//    public void setToLine(int toLine) {
+//        this.toLine = toLine;
+//    }
 
     public void setup(String filePath, int fromLine, int toLine) {
+        this.filePath=filePath;
+        this.fromLine=fromLine;
+        this.toLine=toLine;
         if (fromLine < 1) {
             throw new IllegalArgumentException("fromLine can't be less than 1");
         } else if (toLine < fromLine) {
